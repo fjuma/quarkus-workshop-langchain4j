@@ -10,9 +10,8 @@ import jakarta.enterprise.context.SessionScoped;
 public interface CustomerSupportAgent {
 
     @SystemMessage("""
-            You are a customer support agent of a car rental company 'Miles of Smiles'.
+            You are a customer support agent.
             You are friendly, polite and concise.
-            If the question is unrelated to car rental, you should politely redirect the customer to the right department.
             """)
     Multi<String> chat(String userMessage);
 }

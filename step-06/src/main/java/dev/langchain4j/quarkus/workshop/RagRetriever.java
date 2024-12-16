@@ -23,7 +23,7 @@ public class RagRetriever {
         var contentRetriever = EmbeddingStoreContentRetriever.builder()
                 .embeddingModel(model)
                 .embeddingStore(store)
-                .maxResults(3)
+                .maxResults(2)
                 .build();
 
         return DefaultRetrievalAugmentor.builder()
@@ -33,9 +33,9 @@ public class RagRetriever {
                 .contentInjector(new ContentInjector() {
                     @Override
                     public UserMessage inject(List<Content> list, UserMessage userMessage) {
-                        StringBuffer prompt = new StringBuffer(userMessage.singleText());
-                        prompt.append("\nPlease, only use the following information:\n");
-                        list.forEach(content -> prompt.append("- ").append(content.textSegment().text()).append("\n"));
+                        StringBuffer prompt = new StringBuffer("\nAnswer the question based only on the following context:\n");
+                        list.forEach(content -> prompt.append(content.textSegment().text()).append("\n"));
+                        prompt.append("Question:\n" + userMessage.singleText());
                         return new UserMessage(prompt.toString());
                     }
                 })

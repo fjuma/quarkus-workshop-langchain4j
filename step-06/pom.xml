@@ -36,24 +36,24 @@
 
         <dependency>
             <groupId>io.quarkiverse.langchain4j</groupId>
-            <artifactId>quarkus-langchain4j-openai</artifactId>
+            <artifactId>quarkus-langchain4j-ollama</artifactId>
             <version>${quarkus-langchain4j.version}</version>
         </dependency>
 
-        <!-- -8<- [start:embedding-bge]       -->
+        <!-- -8<- [start:embedding-all-minilm-l6-v2]       -->
         <dependency>
             <groupId>dev.langchain4j</groupId>
-            <artifactId>langchain4j-embeddings-bge-small-en-q</artifactId>
+            <artifactId>langchain4j-embeddings-all-minilm-l6-v2</artifactId>
             <version>0.35.0</version>
         </dependency>
-        <!-- -8<- [end:embedding-bge]       -->
-        <!-- -8<- [start:pgvector]       -->
+        <!-- -8<- [end:embedding-all-minilm-l6-v2]       -->
+        <!-- -8<- [start:neo4j]       -->
         <dependency>
             <groupId>io.quarkiverse.langchain4j</groupId>
-            <artifactId>quarkus-langchain4j-pgvector</artifactId>
+            <artifactId>quarkus-langchain4j-neo4j</artifactId>
             <version>${quarkus-langchain4j.version}</version>
         </dependency>
-        <!-- -8<- [end:pgvector]       -->
+        <!-- -8<- [end:neo4j]       -->
 
         <dependency>
             <groupId>io.quarkus</groupId>
