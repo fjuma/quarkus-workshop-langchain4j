@@ -34,7 +34,7 @@ public class RagRetriever {
                     @Override
                     public UserMessage inject(List<Content> list, UserMessage userMessage) {
                         StringBuffer prompt = new StringBuffer("\nAnswer the question based only on the following context:\n");
-                        list.forEach(content -> prompt.append(content.textSegment().text()).append("\n"));
+                        list.forEach(content -> prompt.append(content.textSegment().text()).append("\nSource: ").append(content.textSegment().metadata().get("source")).append("\n"));
                         prompt.append("Question:\n" + userMessage.singleText());
                         return new UserMessage(prompt.toString());
                     }
