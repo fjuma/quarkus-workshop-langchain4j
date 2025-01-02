@@ -17,7 +17,7 @@
         <compiler-plugin.version>3.13.0</compiler-plugin.version>
 
         <quarkus.platform.version>3.16.4</quarkus.platform.version>
-        <quarkus-langchain4j.version>0.21.0</quarkus-langchain4j.version>
+        <quarkus-langchain4j.version>0.22.0</quarkus-langchain4j.version>
     </properties>
 
     <dependencyManagement>
@@ -34,6 +34,11 @@
 
     <dependencies>
 
+        <dependency>
+            <groupId>io.quarkiverse.langchain4j</groupId>
+            <artifactId>quarkus-langchain4j-core</artifactId>
+            <version>${quarkus-langchain4j.version}</version>
+        </dependency>
         <dependency>
             <groupId>io.quarkiverse.langchain4j</groupId>
             <artifactId>quarkus-langchain4j-ollama</artifactId>
